@@ -80,9 +80,15 @@ int main(int argc, char *argv[])
         waitActiveObject(activeObjects[i]);             // block until all tasks are done
         pthread_join(activeObjects[i]->threadId, NULL); // wait for thread to terminate
         destroyActiveObject(activeObjects[i]);          // free resources
+        activeObjects[i] = NULL;
     }
 
     free(activeObjects);
+    for(int i = 0; i < ACTIVE_OBJECTS; i++){
+        free(handlers[i]);
+        handlers[i] = NULL;
+    }
+    free(handlers);
 
     return 0;
 }

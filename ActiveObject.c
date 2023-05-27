@@ -58,8 +58,9 @@ void destroyActiveObject(ActiveObjectPtr pActiveObject)
 {
     pActiveObject->isActive = 0;
     destroyQueue(pActiveObject->pQueue);
+    free(pActiveObject->pQueue);
     pthread_mutex_destroy(&(pActiveObject->mutex));
-    free(pActiveObject->pHandler);
+    pActiveObject->pHandler = NULL;
     pActiveObject->pNext = NULL;
     free(pActiveObject);
 }
