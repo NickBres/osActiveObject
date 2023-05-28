@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    printf("Creating %d handlers\n", ACTIVE_OBJECTS);
     HandlerPtr *handlers = (HandlerPtr *)malloc(sizeof(HandlerPtr) * ACTIVE_OBJECTS);
     if (handlers == NULL)
     {
