@@ -14,7 +14,7 @@ All tests have been performed on a MacBook Pro with an ARM processor using the U
 
 ```sh
   git clone https://github.com/NickBres/osActiveObject.git
-  cd asActiveObject/
+  cd osActiveObject/
   make
   ./st_pipeline <tasksNum> <seed>
    ```
