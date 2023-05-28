@@ -25,6 +25,12 @@ int main(int argc, char *argv[])
         seed = atoi(argv[2]);
     }
 
+    if (!seed)
+    {
+        seed = time(0);
+    }
+    srand(seed); 
+
     ActiveObjectPtr *activeObjects = (ActiveObjectPtr *)malloc(sizeof(ActiveObjectPtr) * ACTIVE_OBJECTS);
     if (activeObjects == NULL)
     {
@@ -111,11 +117,6 @@ int isPrime(unsigned int num)
 
 int randomInt(int seed)
 {
-    if (!seed)
-    {
-        seed = time(0);
-    }
-    srand(seed);                                 // Set the seed for the random number generator
     int randomNumber = rand() % 900000 + 100000; // Generate a random number between 100000 and 999999
     return randomNumber;
 }
