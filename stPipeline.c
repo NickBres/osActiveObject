@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < tasks; i++)
     {
-        sleep(1);
+        usleep(1);
         int num = seed ? seed + i : 0;
         enqueueActiveObject(activeObjects[0], num);
     }
